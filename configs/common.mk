@@ -41,6 +41,11 @@ endif
 # Add noobbuilds sounds
 -include vendor/noobbuilds/configs/noob_sounds.mk
     
+# init.d script support
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bin/sysinit:system/bin/sysinit \
+    $(LOCAL_PATH)/root/init.noob.rc:root/init.noob.rc
+        
 # Add stock bootanimation 
 -include vendor/noobbuilds/configs/bootani.mk
 
