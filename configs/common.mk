@@ -56,11 +56,17 @@ PRODUCT_COPY_FILES += \
 # init.d script support
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bin/sysinit:system/bin/sysinit \
-    $(LOCAL_PATH)/root/init.noob.rc:root/init.noob.rc        
+    $(LOCAL_PATH)/root/init.noob.rc:root/init.noob.rc
+
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bin/backuptool.sh:install/bin/backuptool.sh \
+    $(LOCAL_PATH)/bin/backuptool.functions:install/bin/backuptool.functions \
+    $(LOCAL_PATH)/addon.d/50-base.sh:system/addon.d/50-base.sh       
     
 # Add noobbuilds sounds
 -include vendor/noobbuilds/configs/noob_sounds.mk
-            
+
 # Add stock bootanimation 
 -include vendor/noobbuilds/configs/bootani.mk
 
