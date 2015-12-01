@@ -51,6 +51,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
 endif
 
+# Include explicitly to work around GMS issues
+PRODUCT_PACKAGES += \
+    librsjni
+
 # Add noobbuilds sounds
 -include vendor/noobbuilds/configs/noob_sounds.mk
   
