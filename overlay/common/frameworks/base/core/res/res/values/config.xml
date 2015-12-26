@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	
     <string-array name="config_locationProviderPackageNames" translatable="false">
         <!-- GMS Google provider -->
         <item>com.google.android.gms</item>		
@@ -8,8 +7,13 @@
         <item>com.android.location.fused</item>
     </string-array>
     
-        <bool name="config_cellBroadcastAppLinks">true</bool>     
-
+    <bool name="config_cellBroadcastAppLinks">true</bool>
+    
+    <!-- Hide Project Fi app unless it is being used -->
+    <string-array name="config_disabledUntilUsedPreinstalledCarrierApps">
+        <item>com.google.android.apps.tycho</item>
+    </string-array>
+        
     <!-- Set default widget options to use Google clock -->
     <string name="widget_default_package_name">com.google.android.deskclock</string>
     <string name="widget_default_class_name">com.android.alarmclock.DigitalAppWidgetProvider</string>
