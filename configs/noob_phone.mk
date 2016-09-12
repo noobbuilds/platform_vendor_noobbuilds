@@ -3,6 +3,10 @@
 # Include common make file
 include vendor/noobbuilds/configs/common.mk
 
+# Old apns
+PRODUCT_COPY_FILES += \
+    vendor/noobbuilds/prebuilt/etc/old-apns-conf.xml:system/etc/old-apns-conf.xml
+
 # Phone packages
 PRODUCT_PACKAGES += \
     Stk \
