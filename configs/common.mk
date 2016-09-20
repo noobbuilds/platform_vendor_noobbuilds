@@ -21,7 +21,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #   ro.control_privapp_permissions=enforce    
 
 # Common overlays
-# PRODUCT_PACKAGE_OVERLAYS += vendor/noobbuilds/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/noobbuilds/overlay/common
 
 # Added Packages
 PRODUCT_PACKAGES += \
