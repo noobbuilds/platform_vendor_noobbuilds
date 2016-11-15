@@ -19,11 +19,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
      
 # Common overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/noobbuilds/overlays/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/noobbuilds/overlay/common
 
 # Added Packages
 PRODUCT_PACKAGES += \
-    Launcher3  
+    Launcher3
+    
+# Libs for syping w/ aosp keyboard.
+ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+endif    
     
 # Add noobbuilds sounds
 -include vendor/noobbuilds/configs/noob_sounds.mk
