@@ -34,20 +34,24 @@ else
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
 endif
-
-# Add version make
--include vendor/noobbuilds/configs/version.mk   
     
-# Add noobbuilds sounds
--include vendor/noobbuilds/configs/noob_sounds.mk
+# Add SuperSU
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/addon.d/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip
     
 # init.d script support
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bin/sysinit:system/bin/sysinit \
-    $(LOCAL_PATH)/root/init.noob.rc:root/init.noob.rc
-        
+    $(LOCAL_PATH)/root/init.noob.rc:root/init.noob.rc        
+    
+# Add noobbuilds sounds
+-include vendor/noobbuilds/configs/noob_sounds.mk
+            
 # Add stock bootanimation 
 -include vendor/noobbuilds/configs/bootani.mk
 
 # Add fingerprints
 -include vendor/noobbuilds/configs/noob_fingerprints.mk
+
+# Add version make
+-include vendor/noobbuilds/configs/version.mk
