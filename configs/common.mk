@@ -25,7 +25,8 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/noobbuilds/overlay/common
 PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapersPicker \
-    AdAway
+    AdAway \
+    KernelAdiutor
     
 # Libs for syping w/ aosp keyboard.
 ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
