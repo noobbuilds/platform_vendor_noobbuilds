@@ -26,7 +26,9 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapersPicker \
     AdAway \
-    KernelAdiutor
+    KernelAdiutor \
+    Substratum \
+    Masquerade
     
 # Libs for syping w/ aosp keyboard.
 ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
