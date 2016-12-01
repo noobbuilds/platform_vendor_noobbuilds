@@ -31,6 +31,10 @@ PRODUCT_PACKAGES += \
     Substratum \
     Masquerade
     
+# Include explicitly to work around Facelock issues
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full    
+    
 # Libs for syping w/ aosp keyboard.
 ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
