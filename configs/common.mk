@@ -32,7 +32,10 @@ PRODUCT_COPY_FILES += \
 else
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
-endif    
+endif
+
+# Add version make
+-include vendor/noobbuilds/configs/version.mk   
     
 # Add noobbuilds sounds
 -include vendor/noobbuilds/configs/noob_sounds.mk
