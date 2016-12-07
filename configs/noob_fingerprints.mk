@@ -3,15 +3,15 @@
 ifeq ($(TARGET_PRODUCT),angler)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=angler \
-    BUILD_FINGERPRINT=google/angler/angler:7.0/NBD91K/3318877:user/release-keys \
-    PRIVATE_BUILD_DESC="angler-user 7.0 NBD91K 3318877 release-keys"
+    BUILD_FINGERPRINT=google/angler/angler:7.1.1/NPF26F/3468883:user/release-keys \
+    PRIVATE_BUILD_DESC="angler-user 7.1.1 NPF26F 3468883 release-keys"
 endif
 
 ifeq ($(TARGET_PRODUCT),flounder)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=volantis \
-    BUILD_FINGERPRINT=google/volantis/flounder:7.0/NRD91N/3318108:user/release-keys \
-    PRIVATE_BUILD_DESC="volantis-user 7.0 NRD91N 3318108 release-keys"
+    BUILD_FINGERPRINT=google/volantis/flounder:7.1.1/NMF26F/3425388:user/release-keys \
+    PRIVATE_BUILD_DESC="volantis-user 7.1.1 NMF26F 3425388 release-keys"
 endif
 
        
