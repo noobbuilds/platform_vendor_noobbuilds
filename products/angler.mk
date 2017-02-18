@@ -14,5 +14,7 @@ PRODUCT_DEVICE := angler
 PRODUCT_MODEL := Nexus 6P
 PRODUCT_MANUFACTURER := Huawei
 
-
-
+# Bring in noob angler ramdisk defaults
+PRODUCT_COPY_FILES += \
+	vendor/noobbuilds/prebuilt/root/init.noob_angler.rc:root/init.noob_angler.rc \
+	vendor/noobbuilds/prebuilt/root/init.special_power.sh:root/init.special_power.sh

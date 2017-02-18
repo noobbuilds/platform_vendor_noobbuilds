@@ -1,0 +1,139 @@
+# noobbuilds angler init script
+# Credit to @nathanchance
+
+on boot
+   # Set vibration strength to 27 (50% in EXKM)
+   chown root root /sys/android_touch/vib_strength
+   chmod 666 /sys/android_touch/vib_strength
+   write /sys/android_touch/vib_strength 27
+   chmod 644 /sys/android_touch/vib_strength
+   
+on post-fs
+   write /dev/cpuset/foreground/cpus 0-7
+   write /dev/cpuset/foreground/boost/cpus 0-7
+   write /dev/cpuset/background/cpus 0-7
+   write /dev/cpuset/system-background/cpus 0-7
+   
+on property:sys.boot_completed=1
+   # according to Qcom this legacy value improves first launch latencies
+   # stock value is 512k
+   # from franciscofranco
+   setprop dalvik.vm.heapminfree 2m
+
+      # cpuset
+   write /dev/cpuset/foreground/cpus 0-2,4-7
+   write /dev/cpuset/foreground/boost/cpus 4-7
+   write /dev/cpuset/background/cpus 0-2
+   write /dev/cpuset/system-background/cpus 0-2
+   
+   # Backlight dimmer
+   write /sys/module/mdss_fb/parameters/backlight_dimmer 1
+   
+      # bcmdhd wakeup sources
+   write /sys/module/wakeup/parameters/enable_wlan_rx_wake_ws 0
+   write /sys/module/wakeup/parameters/enable_wlan_ctrl_wake_ws 0
+   write /sys/module/wakeup/parameters/enable_wlan_wake_ws 0
+   write /sys/module/wakeup/parameters/enable_ipa_ws 0
+   
+   # Little cluster governor - relaxed
+   chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+   chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+   write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor relaxed
+   # Little cluster min - 384 MHz
+   chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+   chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+   write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+   chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+   # Little cluster max - 1708 MHz
+   chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+   chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+   write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1708800
+   chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+   # Big cluster governor - chill
+   chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+   chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+   write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor chill
+   # Big cluster min - 633 MHz
+   chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+   chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+   write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 633600
+   chmod 0444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+   # Big cluster max - 2054 MHz
+   chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+   chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+   write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 2054400
+   chmod 0444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+
+   # Courtesy of @frap129
+   # Little cluster settings
+   chown system system /sys/devices/system/cpu/cpu0/cpufreq/relaxed/up_threshold
+   chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/up_threshold
+   write /sys/devices/system/cpu/cpu0/cpufreq/relaxed/up_threshold 70
+   chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/up_threshold
+   chown system system /sys/devices/system/cpu/cpu0/cpufreq/relaxed/down_threshold
+   chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/down_threshold 
+   write /sys/devices/system/cpu/cpu0/cpufreq/relaxed/down_threshold 60
+   chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/down_threshold
+   chown system system /sys/devices/system/cpu/cpu0/cpufreq/relaxed/down_threshold_suspended
+   chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/down_threshold_suspened
+   write /sys/devices/system/cpu/cpu0/cpufreq/relaxed/down_threshold_suspended 85 
+   chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/down_threshold_suspened
+   chown system system /sys/devices/system/cpu/cpu0/cpufreq/relaxed/freq_step
+   chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/freq_step
+   write /sys/devices/system/cpu/cpu0/cpufreq/relaxed/freq_step 6
+   chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/freq_step
+   chown system system /sys/devices/system/cpu/cpu0/cpufreq/relaxed/boost_count
+   chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/boost_count
+   write /sys/devices/system/cpu/cpu0/cpufreq/relaxed/boost_count 5
+   chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/boost_count
+   chown system system /sys/devices/system/cpu/cpu0/cpufreq/relaxed/boost_ceiling
+   chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/boost_ceiling
+   write /sys/devices/system/cpu/cpu0/cpufreq/relaxed/boost_count 10
+   chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/relaxed/boost_ceiling
+
+   # Big cluster settings
+   chown system system /sys/devices/system/cpu/cpu4/cpufreq/chill/up_threshold
+   chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/chill/up_threshold
+   write /sys/devices/system/cpu/cpu4/cpufreq/chill/up_threshold 90
+   chmod 0444 /sys/devices/system/cpu/cpu4/cpufreq/chill/up_threshold
+   chown system system /sys/devices/system/cpu/cpu4/cpufreq/chill/down_threshold
+   chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/chill/down_threshold
+   write /sys/devices/system/cpu/cpu4/cpufreq/chill/down_threshold 75
+   chmod 0444 /sys/devices/system/cpu/cpu4/cpufreq/chill/down_threshold
+   chown system system /sys/devices/system/cpu/cpu4/cpufreq/chill/down_threshold_suspended
+   chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/chill/down_threshold_suspened
+   write /sys/devices/system/cpu/cpu4/cpufreq/chill/down_threshold_suspended 95 
+   chmod 0444 /sys/devices/system/cpu/cpu4/cpufreq/chill/down_threshold_suspened
+   chown system system /sys/devices/system/cpu/cpu4/cpufreq/chill/freq_step
+   chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/chill/freq_step
+   write /sys/devices/system/cpu/cpu4/cpufreq/chill/freq_step 4
+   chmod 0444 /sys/devices/system/cpu/cpu4/cpufreq/chill/freq_step
+   chown system system /sys/devices/system/cpu/cpu4/cpufreq/chill/boost_count
+   chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/chill/boost_count
+   write /sys/devices/system/cpu/cpu4/cpufreq/chill/boost_count 10
+   chmod 0444 /sys/devices/system/cpu/cpu4/cpufreq/chill/boost_count
+
+
+   # Input boost configuration
+   write /sys/module/cpu_boost/parameters/input_boost_enabled 1
+   write /sys/module/cpu_boost/parameters/input_boost_freq "0:0 1:0 2:0 3:960000 4:0 5:0 6:0 7:0"
+   write /sys/module/cpu_boost/parameters/input_boost_ms 40
+
+   # Core control disabled, msm_thermal enabled
+   write /sys/module/msm_thermal/core_control/enabled 0
+   write /sys/module/msm_thermal/parameters/enabled Y
+
+      # Lazyplug
+   write /sys/module/lazyplug/parameters/lazyplug_active 1
+
+   # Tune Adrenoboost
+   write /sys/devices/soc.0/fdb00000.qcom,kgsl-3d0/devfreq/fdb00000.qcom,kgsl-3d0/adrenoboost 1
+
+   # UKSM
+   write /sys/kernel/mm/uksm/run 1
+
+   # Very light LMK profile
+   write /sys/module/lowmemorykiller/parameters/minfree "7160,14320,21480,28640,35800,42960"
+
+   # Special power script
+   exec u:r:init:s0 root root -- /init.special_power.sh
