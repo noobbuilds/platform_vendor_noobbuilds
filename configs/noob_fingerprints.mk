@@ -14,6 +14,13 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="volantis-user 7.1.1 N4F26Q 3623443 release-keys"
 endif
 
+ifeq ($(TARGET_PRODUCT),shamu)
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=shamu \
+    BUILD_FINGERPRINT=google/shamu/shamu:7.1.1/N6F26R/3582520:user/release-keys \
+    PRIVATE_BUILD_DESC="shamu-user 7.1.1 N6F26R 3582520 release-keys"
+endif
+
        
        
        
