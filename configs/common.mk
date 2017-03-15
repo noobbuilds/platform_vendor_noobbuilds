@@ -30,7 +30,8 @@ PRODUCT_PACKAGES += \
     AdAway \
     KernelAdiutor \
     Substratum \
-    ThemeInterfacer
+    ThemeInterfacer \
+    OmniStyle
     
 # Include explicitly to work around Facelock issues
 PRODUCT_PACKAGES += \
