@@ -12,3 +12,7 @@ PRODUCT_BRAND := google
 PRODUCT_DEVICE := shamu
 PRODUCT_MODEL := Nexus 6
 PRODUCT_MANUFACTURER := motorola
+
+# Bring in noob shamu ramdisk defaults
+PRODUCT_COPY_FILES += \
+	vendor/noobbuilds/prebuilt/root/init.noob.shamu.rc:root/init.noob.shamu.rc
