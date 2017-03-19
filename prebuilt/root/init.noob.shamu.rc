@@ -57,9 +57,6 @@ on property:sys.boot_completed=1
    # 512 sounds good. "Fiops" set as default i/o scheduler in defconfig.
    write /sys/block/mmcblk0/queue/read_ahead_kb 512
    
-   # Default I/O scheduler - deadline
-   write /sys/block/mmcblk0/queue/scheduler deadline
-   
    # Wakelock
    write /sys/module/xhci_hcd/parameters/wl_divide 17
    write /sys/module/wakeup/parameters/enable_wlan_wake_ws Y
