@@ -31,7 +31,8 @@ PRODUCT_PACKAGES += \
     KernelAdiutor \
     Substratum \
     ThemeInterfacer \
-    OmniStyle
+    OmniStyle \
+    Calculator
     
 # Include explicitly to work around Facelock issues
 PRODUCT_PACKAGES += \
