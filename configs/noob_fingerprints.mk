@@ -3,22 +3,22 @@
 ifeq ($(TARGET_PRODUCT),angler)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=angler \
-    BUILD_FINGERPRINT=google/angler/angler:7.1.2/N2G48B/4073501:user/release-keys \
-    PRIVATE_BUILD_DESC="angler-user 7.1.2 N2G48B 4073501 release-keys"
+    BUILD_FINGERPRINT=google/angler/angler:7.1.2/N2G48C/4104010:user/release-keys \
+    PRIVATE_BUILD_DESC="angler-user 7.1.2 N2G48C 4104010 release-keys"
 endif
 
 ifeq ($(TARGET_PRODUCT),flounder)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=volantis \
-    BUILD_FINGERPRINT=google/volantis/flounder:7.1.1/N9F27F/4072790:user/release-keys \
-    PRIVATE_BUILD_DESC="volantis-user 7.1.1 N9F27F 4072790 release-keys"
+    BUILD_FINGERPRINT=google/volantis/flounder:7.1.1/N9F27H/4108833:user/release-keys \
+    PRIVATE_BUILD_DESC="volantis-user 7.1.1 N9F27H 4108833 release-keys"
 endif
 
 ifeq ($(TARGET_PRODUCT),shamu)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=shamu \
-    BUILD_FINGERPRINT=google/shamu/shamu:7.1.1/N6F27H/4072753:user/release-keys \
-    PRIVATE_BUILD_DESC="shamu-user 7.1.1 N6F27H 4072753 release-keys"
+    BUILD_FINGERPRINT=google/shamu/shamu:7.1.1/N6F27I/4118426:user/release-keys \
+    PRIVATE_BUILD_DESC="shamu-user 7.1.1 N6F27I 4118426 release-keys"
 endif
 
        
