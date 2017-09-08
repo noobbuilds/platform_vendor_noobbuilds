@@ -16,7 +16,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true \
     ro.com.android.dateformat=MM-dd-yyyy \
     drm.service.enabled=true \
-    ro.build.selinux=1
+    ro.build.selinux=1 \
+    persist.sys.disable_rescue=true
 #   ro.control_privapp_permissions=enforce    
 
 # Common overlays
