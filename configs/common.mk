@@ -9,7 +9,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.com.google.clientidbase=android-google \
-    ro.control_privapp_permissions=enforce \
     ro.error.receiver.system.apps=com.google.android.gms \
     ro.setupwizard.enterprise_mode=1 \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
@@ -17,7 +16,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true \
     ro.com.android.dateformat=MM-dd-yyyy \
     drm.service.enabled=true \
-    ro.build.selinux=1 
+    ro.build.selinux=1
+#   ro.control_privapp_permissions=enforce    
 
 # Common overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/noobbuilds/overlay/common
