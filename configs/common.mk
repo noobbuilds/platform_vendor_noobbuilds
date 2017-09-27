@@ -35,7 +35,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bin/sysinit:system/bin/sysinit \
     $(LOCAL_PATH)/root/init.noob.rc:root/init.noob.rc
-  
+
+# System additions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/etc/init.d/00banner:system/etc/init.d/00banner
+
 # Add bootanimation 
 -include vendor/noobbuilds/configs/bootani.mk
 
