@@ -26,7 +26,8 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/noobbuilds/overlay/common
 # Added Packages
 PRODUCT_PACKAGES += \
     Launcher3 \
-    LiveWallpapersPicker
+    LiveWallpapersPicker \
+    AdAway
 
 # init.d script support
 PRODUCT_COPY_FILES += \
