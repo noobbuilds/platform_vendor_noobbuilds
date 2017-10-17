@@ -40,6 +40,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bin/backuptool.functions:install/bin/backuptool.functions \
     $(LOCAL_PATH)/addon.d/50-base.sh:system/addon.d/50-base.sh
 
+# Proprietary latinime libs needed for Keyboard swyping
+ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
+    $(LOCAL_PATH)/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
+    $(LOCAL_PATH)/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
+endif
+
 # Add noobbuilds sounds
 -include vendor/noobbuilds/configs/noob_sounds.mk
   
