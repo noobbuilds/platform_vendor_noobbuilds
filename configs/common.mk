@@ -32,7 +32,7 @@ PRODUCT_PACKAGES += \
 # -include vendor/noobbuilds/configs/noob_sounds.mk
   
 # Add bootanimation 
-# -include vendor/noobbuilds/configs/bootani.mk
+-include vendor/noobbuilds/configs/bootani.mk
 
 # Add fingerprints
 # -include vendor/noobbuilds/configs/noob_fingerprints.mk
