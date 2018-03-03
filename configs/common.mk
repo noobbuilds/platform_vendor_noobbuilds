@@ -38,4 +38,4 @@ PRODUCT_PACKAGES += \
 # -include vendor/noobbuilds/configs/noob_fingerprints.mk
 
 # Add version make
-# -include vendor/noobbuilds/configs/version.mk
+-include vendor/noobbuilds/configs/version.mk
