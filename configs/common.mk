@@ -38,7 +38,7 @@ PRODUCT_COPY_FILES += \
 
 # System additions
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/init.d/00banner:system/etc/init.d/00banner
+    $(LOCAL_PATH)/etc/init.d/00banner:system/etc/init.d/00banner \
     $(LOCAL_PATH)/root/mkshrc:system/etc/mkshrc
 
 # Add bootanimation 
