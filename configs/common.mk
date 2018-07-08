@@ -2,7 +2,7 @@
 
 
 # Local path for prebuilts
-# LOCAL_PATH:= vendor/noobbuilds/prebuilt
+LOCAL_PATH:= vendor/noobbuilds/prebuilt
 
 # Common build prop overrides 
 PRODUCT_PROPERTY_OVERRIDES += \
