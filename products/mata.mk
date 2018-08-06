@@ -20,5 +20,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=essential/mata/mata:8.1.0/OPM1.180104.267/399:user/release-keys \
     PRIVATE_BUILD_DESC="mata-user 8.1.0 OPM1.180104.267 399 release-keys"
 
-$(call inherit-product-if-exists, vendor/essential/mata/taimen-vendor.mk)
+$(call inherit-product-if-exists, vendor/essential/mata/mata-vendor.mk)
 $(call inherit-product-if-exists, vendor/gapps/gapps.mk)
