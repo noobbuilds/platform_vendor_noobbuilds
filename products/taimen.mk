@@ -1,7 +1,7 @@
 # Noobbuilds taimen make file
 
 # Include noobbuilds phone config
-include vendor/noobuilds/configs/noob_phone.mk
+include vendor/noobbuilds/configs/noob_phone.mk
 
 # Inherit AOSP device configuration for  taimen
 $(call inherit-product, device/google/taimen/aosp_taimen.mk)
